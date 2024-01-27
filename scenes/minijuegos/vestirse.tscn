@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cj6w6cfs10ii3"]
+[gd_scene load_steps=7 format=3 uid="uid://cj6w6cfs10ii3"]
 
+[ext_resource type="Script" path="res://scripts/vestirse.gd" id="1_8g2iq"]
 [ext_resource type="PackedScene" uid="uid://dv8ucucgfflg7" path="res://scenes/personaje.tscn" id="1_dh5m7"]
 [ext_resource type="Texture2D" uid="uid://3nqsboe8fa6h" path="res://sprites/objetos/shadow.png" id="2_5wp4f"]
 [ext_resource type="PackedScene" uid="uid://0m73ajpn738j" path="res://scenes/objetos/armario.tscn" id="2_ux4kg"]
 [ext_resource type="Texture2D" uid="uid://bmwddnxlr7lby" path="res://sprites/fondos/fondovacio.png" id="2_xkexj"]
+[ext_resource type="PackedScene" uid="uid://75pr6pmf5ovg" path="res://scenes/flecha.tscn" id="6_ud5sp"]
 
 [sub_resource type="GDScript" id="GDScript_tgn3s"]
 script/source = "extends Node2D
@@ -21,7 +23,7 @@ func _process(delta):
 "
 
 [node name="minijuego" type="Node2D"]
-script = SubResource("GDScript_tgn3s")
+script = ExtResource("1_8g2iq")
 
 [node name="personaje" parent="." instance=ExtResource("1_dh5m7")]
 z_index = 2
@@ -49,3 +51,5 @@ texture = ExtResource("2_5wp4f")
 [node name="fondo" type="Sprite2D" parent="."]
 texture = ExtResource("2_xkexj")
 centered = false
+
+[node name="flecha" parent="." instance=ExtResource("6_ud5sp")]
