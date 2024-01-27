@@ -7,9 +7,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta): 
-	print(str(delta))
+func _process(_delta): 
 	if (value>0):
-		value=value-delta*100
-	elif(value<=delta*100):
-		value=100
+		value=value-main.ritmo
+	elif(value<=main.ritmo):
+		value=max_value

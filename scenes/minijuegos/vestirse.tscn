@@ -1,11 +1,27 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj6w6cfs10ii3"]
+[gd_scene load_steps=6 format=3 uid="uid://cj6w6cfs10ii3"]
 
 [ext_resource type="PackedScene" uid="uid://dv8ucucgfflg7" path="res://scenes/personaje.tscn" id="1_dh5m7"]
 [ext_resource type="Texture2D" uid="uid://3nqsboe8fa6h" path="res://sprites/objetos/shadow.png" id="2_5wp4f"]
 [ext_resource type="PackedScene" uid="uid://0m73ajpn738j" path="res://scenes/objetos/armario.tscn" id="2_ux4kg"]
 [ext_resource type="Texture2D" uid="uid://bmwddnxlr7lby" path="res://sprites/fondos/fondovacio.png" id="2_xkexj"]
 
+[sub_resource type="GDScript" id="GDScript_tgn3s"]
+script/source = "extends Node2D
+
+var verbo = \"VISTETE\"
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	main.verbo = verbo
+	main.cargarMinijuego()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
 [node name="minijuego" type="Node2D"]
+script = SubResource("GDScript_tgn3s")
 
 [node name="personaje" parent="." instance=ExtResource("1_dh5m7")]
 z_index = 2
