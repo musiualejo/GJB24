@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://0m73ajpn738j"]
+
+[ext_resource type="Texture2D" uid="uid://bfhn08wub2hht" path="res://sprites/objetos/armario.png" id="1_fxhfo"]
+[ext_resource type="Texture2D" uid="uid://kvhk6x23wt2h" path="res://sprites/objetos/items_armario.png" id="2_pd25v"]
+
+[node name="armario" type="Node2D"]
+
+[node name="estante" type="Sprite2D" parent="."]
+texture = ExtResource("1_fxhfo")
+centered = false
+
+[node name="item_right" type="Sprite2D" parent="estante"]
+z_index = 1
+position = Vector2(96, 64)
+texture = ExtResource("2_pd25v")
+centered = false
+hframes = 6
+vframes = 4
+frame = 1
+
+[node name="item_down" type="Sprite2D" parent="estante"]
+z_index = 1
+position = Vector2(64, 96)
+texture = ExtResource("2_pd25v")
+centered = false
+hframes = 6
+vframes = 4
+frame = 2
+
+[node name="item_left" type="Sprite2D" parent="estante"]
+z_index = 1
+position = Vector2(32, 64)
+texture = ExtResource("2_pd25v")
+centered = false
+hframes = 6
+vframes = 4
+frame = 3
+
+[node name="item_up" type="Sprite2D" parent="estante"]
+z_index = 1
+position = Vector2(64, 32)
+texture = ExtResource("2_pd25v")
+centered = false
+hframes = 6
+vframes = 4

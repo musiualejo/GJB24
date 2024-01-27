@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dv8ucucgfflg7"]
 
-[ext_resource type="Texture2D" uid="uid://nmy68dfrqnge" path="res://sprites/head.png" id="1_y7rc7"]
-[ext_resource type="Texture2D" uid="uid://cnu8blvrtfdtl" path="res://sprites/torso.png" id="2_ayxco"]
-[ext_resource type="Texture2D" uid="uid://bcrqa31s4kpno" path="res://sprites/brazoizq.png" id="3_4qs82"]
-[ext_resource type="Texture2D" uid="uid://bpfxxkfjpb4n1" path="res://sprites/brazoder.png" id="4_tkntd"]
-[ext_resource type="Texture2D" uid="uid://bd5elpqrk7ggk" path="res://sprites/piernas.png" id="5_exdnr"]
-[ext_resource type="Texture2D" uid="uid://1r5f2kbfy058" path="res://sprites/pies.png" id="6_a7tyu"]
+[ext_resource type="Texture2D" uid="uid://nmy68dfrqnge" path="res://sprites/personaje/head.png" id="1_y7rc7"]
+[ext_resource type="Texture2D" uid="uid://cnu8blvrtfdtl" path="res://sprites/personaje/torso.png" id="2_ayxco"]
+[ext_resource type="Texture2D" uid="uid://bcrqa31s4kpno" path="res://sprites/personaje/brazoizq.png" id="3_4qs82"]
+[ext_resource type="Texture2D" uid="uid://bpfxxkfjpb4n1" path="res://sprites/personaje/brazoder.png" id="4_tkntd"]
+[ext_resource type="Texture2D" uid="uid://bd5elpqrk7ggk" path="res://sprites/personaje/piernas.png" id="5_exdnr"]
+[ext_resource type="Texture2D" uid="uid://1r5f2kbfy058" path="res://sprites/personaje/pies.png" id="6_a7tyu"]
 
 [node name="personaje" type="Node2D"]
 

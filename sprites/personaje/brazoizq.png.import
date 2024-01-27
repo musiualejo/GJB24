@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1r5f2kbfy058"
-path="res://.godot/imported/pies.png-fd79a994cf6c6fc00cdc418d6c463e0f.ctex"
+uid="uid://bcrqa31s4kpno"
+path="res://.godot/imported/brazoizq.png-ea21e4eca4d145ab8c452d938389d097.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/pies.png"
-dest_files=["res://.godot/imported/pies.png-fd79a994cf6c6fc00cdc418d6c463e0f.ctex"]
+source_file="res://sprites/personaje/brazoizq.png"
+dest_files=["res://.godot/imported/brazoizq.png-ea21e4eca4d145ab8c452d938389d097.ctex"]
 
 [params]
 

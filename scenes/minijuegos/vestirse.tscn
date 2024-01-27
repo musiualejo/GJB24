@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cj6w6cfs10ii3"]
+
+[ext_resource type="PackedScene" uid="uid://dv8ucucgfflg7" path="res://scenes/personaje.tscn" id="1_dh5m7"]
+[ext_resource type="PackedScene" uid="uid://0m73ajpn738j" path="res://scenes/objetos/armario.tscn" id="2_ux4kg"]
+[ext_resource type="Texture2D" uid="uid://bmwddnxlr7lby" path="res://sprites/fondos/fondovacio.png" id="2_xkexj"]
+
+[node name="Vestirse" type="Node2D"]
+
+[node name="personaje" parent="." instance=ExtResource("1_dh5m7")]
+z_index = 1
+position = Vector2(346, 237)
+scale = Vector2(2, 2)
+
+[node name="armario" parent="." instance=ExtResource("2_ux4kg")]
+z_index = 1
+position = Vector2(534, 108)
+scale = Vector2(3, 3)
+
+[node name="fondo" type="Sprite2D" parent="."]
+texture = ExtResource("2_xkexj")
+centered = false

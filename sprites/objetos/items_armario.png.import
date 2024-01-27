@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpfxxkfjpb4n1"
-path="res://.godot/imported/brazoder.png-0ef63c32b63482d9cd1e1434c81230f0.ctex"
+uid="uid://kvhk6x23wt2h"
+path="res://.godot/imported/items_armario.png-5db9ff686f6770a3b6ffc6f5c45c50ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/brazoder.png"
-dest_files=["res://.godot/imported/brazoder.png-0ef63c32b63482d9cd1e1434c81230f0.ctex"]
+source_file="res://sprites/objetos/items_armario.png"
+dest_files=["res://.godot/imported/items_armario.png-5db9ff686f6770a3b6ffc6f5c45c50ba.ctex"]
 
 [params]
 

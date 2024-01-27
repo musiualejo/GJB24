@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cnu8blvrtfdtl"
-path="res://.godot/imported/torso.png-2ee260d36494d4739c71ee1ff7699d08.ctex"
+uid="uid://bmwddnxlr7lby"
+path="res://.godot/imported/fondovacio.png-56248aea4ca4e15871a1efad0e6e298c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/torso.png"
-dest_files=["res://.godot/imported/torso.png-2ee260d36494d4739c71ee1ff7699d08.ctex"]
+source_file="res://sprites/fondos/fondovacio.png"
+dest_files=["res://.godot/imported/fondovacio.png-56248aea4ca4e15871a1efad0e6e298c.ctex"]
 
 [params]
 

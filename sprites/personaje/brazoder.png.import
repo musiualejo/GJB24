@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd5elpqrk7ggk"
-path="res://.godot/imported/piernas.png-967672ac7cb3862d3feabfa82bd7df1a.ctex"
+uid="uid://bpfxxkfjpb4n1"
+path="res://.godot/imported/brazoder.png-0c49ad0e8a442d9be18d62d91be75142.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/piernas.png"
-dest_files=["res://.godot/imported/piernas.png-967672ac7cb3862d3feabfa82bd7df1a.ctex"]
+source_file="res://sprites/personaje/brazoder.png"
+dest_files=["res://.godot/imported/brazoder.png-0c49ad0e8a442d9be18d62d91be75142.ctex"]
 
 [params]
 
