@@ -5,6 +5,7 @@ extends Node2D
 signal Puntaje(float)
 signal FalloMinijuego()
 signal FinMinijuego()
+signal Success()
 
 var verbo := "corre y pilla el bus"
 
@@ -16,7 +17,7 @@ var started := false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if not started:
+	if not started or reached:
 		return
 	if Input.is_action_just_pressed("ui_left") and (lastKey != 1):
 		lastKey = 1
@@ -27,6 +28,7 @@ func _process(delta):
 		lastKey = 2
 		$llegada.scale = Vector2($llegada.scale.x+growthRate,$llegada.scale.y+growthRate)
 	if $llegada.scale >= Vector2(3, 3) and not reached:
+		Success.emit()
 		Puntaje.emit(score_to_award)
 		reached = true
 

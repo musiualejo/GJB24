@@ -4,6 +4,7 @@ extends Node2D
 
 signal Puntaje(float)
 signal FalloMinijuego()
+signal Success()
 
 const NUMBER_OF_ITEMS := 4
 
@@ -59,6 +60,7 @@ func pick_item(item_index: int):
 
 func pick_zone():
 	if len(zones_picked) == len(zones):
+		Success.emit()
 		return
 	zone_index = get_random_zone_index()
 	while zone_index in zones_picked:

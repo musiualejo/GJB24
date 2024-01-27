@@ -10,9 +10,7 @@ class_name MinigameTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	progress_bar.tint_progress = Color(0.0, 1.0, 0.0)
 	progress_bar.max_value = duration
-	timer.start(duration)
 	timer.one_shot = false
 
 
@@ -26,6 +24,7 @@ func _process(delta):
 
 
 func reset():
+	progress_bar.tint_progress = Color(0.0, 1.0, 0.0)
 	timer.start(duration)
 	timer.paused = true
 

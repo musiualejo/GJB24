@@ -1,5 +1,9 @@
 extends Node2D
 
+signal Puntaje(int)
+signal FalloMinijuego()
+signal Success()
+
 var verbo := "esquiva"
 
 @export var items_to_spawn: Array[PackedScene]
@@ -16,9 +20,6 @@ var movement_script = load("res://scripts/movement.gd")
 var started := false
 
 const NUMBER_OF_ITEMS := 4
-
-signal Puntaje(int)
-signal FalloMinijuego()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

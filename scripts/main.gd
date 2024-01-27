@@ -18,6 +18,7 @@ var current_minigame_index := 0
 @onready var nScore: Label = $ui/score
 @onready var nTimer: MinigameTimer = $ui/cronometro/reloj
 @onready var minigame_pre_timer = $ui/minigame_pre_screen
+@onready var success_message = $ui/success_message
 
 # SEÑALES
 
@@ -29,7 +30,9 @@ func _ready():
 	if nMinijuego:
 		nMinijuego.FalloMinijuego.connect(_failed_minigame)
 		nMinijuego.Puntaje.connect(_increase_score)
+		nMinijuego.Success.connect(_show_success_message)
 		nVerbo.actualizaVerbo(nMinijuego.verbo)
+		success_message.hide()
 		nTimer.reset()
 
 
@@ -51,8 +54,10 @@ func _next_minigame():
 	current_minigame_index = (current_minigame_index + 1) % len(minigames)
 	var next_minigame = minigames[current_minigame_index]
 	var instance = next_minigame.instantiate()
+	success_message.hide()
 	instance.FalloMinijuego.connect(_failed_minigame)
 	instance.Puntaje.connect(_increase_score)
+	instance.Success.connect(_show_success_message)
 	add_child(instance)
 	move_child(instance, 0)
 	nMinijuego = instance
@@ -73,3 +78,7 @@ func _start_minigame():
 
 func _on_pre_minigame_timer_timeout():
 	_start_minigame()
+
+
+func _show_success_message():
+	success_message.show()
