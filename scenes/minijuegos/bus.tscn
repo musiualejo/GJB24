@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhcnsnon22h1i"]
+
+[ext_resource type="Script" path="res://scripts/bus.gd" id="1_byqdt"]
+[ext_resource type="Texture2D" uid="uid://bmwddnxlr7lby" path="res://sprites/fondos/fondovacio.png" id="5_jtv6f"]
+
+[node name="minijuego" type="Node2D"]
+script = ExtResource("1_byqdt")
+
+[node name="fondo" type="Sprite2D" parent="."]
+texture = ExtResource("5_jtv6f")
+centered = false

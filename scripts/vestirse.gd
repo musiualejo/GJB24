@@ -5,7 +5,7 @@ signal FinMinijuego()
 
 const NUMBER_OF_ITEMS := 4
 
-var verbo := "vistete"
+var verbo := "corre y pilla el bus"
 var chosen_frame = null
 var zone_index = null
 var zones_picked: Array[int] = []
