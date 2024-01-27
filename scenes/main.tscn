@@ -36,6 +36,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_mtvjr")
 centered = false
 script = ExtResource("4_est3w")
+duration = 8
 
 [node name="frame" type="Polygon2D" parent="ui/cronometro/reloj"]
 z_index = -1
@@ -52,7 +53,7 @@ value = 5.0
 rounded = true
 fill_mode = 5
 texture_progress = ExtResource("4_mvppp")
-tint_progress = Color(1, 0, 0, 1)
+tint_progress = Color(0, 1, 0, 1)
 radial_initial_angle = 45.0
 
 [node name="Timer" type="Timer" parent="ui/cronometro/reloj"]
