@@ -16,6 +16,7 @@ var current_minigame_index := 0
 @onready var lives_bar: TextureProgressBar = $ui/vidas
 @onready var nMinijuego: Vestirse = $minijuego
 @onready var nVerbo = $ui/verbo
+@onready var nScore: Label = $ui/score
 
 # SEÑALES
 
@@ -26,6 +27,12 @@ func _ready():
 	OS.set_low_processor_usage_mode ( true )
 	if nMinijuego:
 		nMinijuego.FalloMinijuego.connect(_failed_minigame)
+		nMinijuego.Puntaje.connect(_increase_score)
+
+
+func _increase_score(amount: int):
+	score += amount
+	nScore.text = "%04d" % score
 
 
 func _failed_minigame():
