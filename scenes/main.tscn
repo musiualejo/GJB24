@@ -16,6 +16,7 @@ script = ExtResource("1_3c80d")
 [node name="minijuego" parent="." instance=ExtResource("1_ytgol")]
 
 [node name="ui" type="Control" parent="."]
+z_index = 5
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -52,7 +53,7 @@ radial_initial_angle = 45.0
 script = ExtResource("5_p87lc")
 
 [node name="score" type="Label" parent="ui"]
-z_index = 1
+z_index = 3
 layout_mode = 0
 offset_left = 1099.0
 offset_right = 1280.0
@@ -67,6 +68,18 @@ z_index = -1
 scale = Vector2(1.20202, 1.22981)
 polygon = PackedVector2Array(150.58, 69.9293, 40.7647, 89.4444, -18.3026, 63.4242, -25.7899, 0, -41.5966, 0, -31.6135, 78.8737, 36.605, 112.212, 150.58, 87.005)
 
+[node name="vidas" type="TextureProgressBar" parent="ui"]
+z_index = 2
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 84.0
+offset_right = 1275.0
+offset_bottom = 212.0
+max_value = 3.0
+fill_mode = 1
+texture_under = ExtResource("8_642uu")
+texture_progress = ExtResource("9_6681w")
+
 [node name="verbo" type="RichTextLabel" parent="ui"]
 z_index = 1
 layout_mode = 0
@@ -79,14 +92,23 @@ bbcode_enabled = true
 text = "[shake rate=30.0 level=15 connected=1][center]¡ BLANK ![/center][/shake]"
 script = ExtResource("7_l4nrt")
 
-[node name="vidas" type="TextureProgressBar" parent="ui"]
+[node name="gameover" type="RichTextLabel" parent="ui"]
+process_mode = 2
+visible = false
 z_index = 2
 layout_mode = 0
-offset_left = 1019.0
-offset_top = 84.0
-offset_right = 1275.0
-offset_bottom = 212.0
-max_value = 3.0
-fill_mode = 1
-texture_under = ExtResource("8_642uu")
-texture_progress = ExtResource("9_6681w")
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_fonts/normal_font = ExtResource("3_2pv2q")
+theme_override_font_sizes/normal_font_size = 96
+bbcode_enabled = true
+text = "[center][shake rate=30.0 level=15 connected=1]
+
+GAME OVER
+!GOOD LUCK NEXT TIME![/shake][/center]"
+
+[node name="Polygon2D" type="Polygon2D" parent="ui/gameover"]
+z_index = -1
+position = Vector2(0, 199)
+color = Color(0, 0, 0, 0.6)
+polygon = PackedVector2Array(0, -199, 0, 521, 1280, 521, 1280, -198)
