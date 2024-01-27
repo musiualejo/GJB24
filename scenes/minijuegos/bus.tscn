@@ -1,10 +1,25 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhcnsnon22h1i"]
+[gd_scene load_steps=12 format=3 uid="uid://m8obp8i3um7l"]
 
 [ext_resource type="Script" path="res://scripts/bus.gd" id="1_byqdt"]
 [ext_resource type="Texture2D" uid="uid://w4dlf3dk6bop" path="res://sprites/personaje/run_character.png" id="3_8y3in"]
 [ext_resource type="Texture2D" uid="uid://c2fqtlflgbvle" path="res://sprites/objetos/bus_station.png" id="4_w12w3"]
 [ext_resource type="Texture2D" uid="uid://bmwddnxlr7lby" path="res://sprites/fondos/fondovacio.png" id="5_jtv6f"]
 [ext_resource type="Texture2D" uid="uid://b1m0pxtkxos38" path="res://sprites/objetos/bus.png" id="5_twma0"]
+
+[sub_resource type="Animation" id="Animation_la3kj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_m0hyf"]
 resource_name = "correman"
@@ -22,25 +37,25 @@ tracks/0/keys = {
 "values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -1), Vector2(0, -6), Vector2(0, -4), Vector2(0, 0), Vector2(0, -1), Vector2(0, -1), Vector2(0, -6), Vector2(0, -4)]
 }
 
-[sub_resource type="Animation" id="Animation_la3kj"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qi0hm"]
+_data = {
+"RESET": SubResource("Animation_la3kj"),
+"correman": SubResource("Animation_m0hyf")
+}
+
+[sub_resource type="Animation" id="Animation_qglt1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath(".:offset")
+tracks/0/path = NodePath("bus:offset")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_qi0hm"]
-_data = {
-"RESET": SubResource("Animation_la3kj"),
-"correman": SubResource("Animation_m0hyf")
+"values": [Vector2(-2, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_62ymt"]
@@ -57,21 +72,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(-2, 0), Vector2(0, -2), Vector2(0, 2), Vector2(2, 0), Vector2(0, 0), Vector2(-2, 0), Vector2(0, -2), Vector2(0, 2), Vector2(2, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_qglt1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("bus:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-2, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q40j3"]
