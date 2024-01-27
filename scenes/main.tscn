@@ -4,14 +4,15 @@
 [ext_resource type="PackedScene" uid="uid://cj6w6cfs10ii3" path="res://scenes/minijuegos/vestirse.tscn" id="1_ytgol"]
 [ext_resource type="FontFile" uid="uid://cushshrwx547c" path="res://fonts/karmaFuture.ttf" id="3_2pv2q"]
 [ext_resource type="Texture2D" uid="uid://d2pjyoi7torhj" path="res://sprites/ui/cronometro.png" id="3_mtvjr"]
+[ext_resource type="Script" path="res://scripts/reloj.gd" id="4_est3w"]
 [ext_resource type="Texture2D" uid="uid://bqglb2llgk8re" path="res://sprites/ui/progreso_cronometro.png" id="4_mvppp"]
-[ext_resource type="Script" path="res://scripts/cronometro.gd" id="5_p87lc"]
 [ext_resource type="Script" path="res://scripts/verbo.gd" id="7_l4nrt"]
 [ext_resource type="Texture2D" uid="uid://dpluvvesaufjp" path="res://sprites/ui/crosses_frame.png" id="8_642uu"]
 [ext_resource type="Texture2D" uid="uid://b5uhupt5tu2ty" path="res://sprites/ui/crosses_redpng.png" id="9_6681w"]
 
 [node name="treeRoot" type="Node2D"]
 script = ExtResource("1_3c80d")
+minigames = Array[PackedScene]([ExtResource("1_ytgol")])
 
 [node name="minijuego" parent="." instance=ExtResource("1_ytgol")]
 
@@ -31,6 +32,7 @@ z_index = 1
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_mtvjr")
 centered = false
+script = ExtResource("4_est3w")
 
 [node name="frame" type="Polygon2D" parent="ui/cronometro/reloj"]
 z_index = -1
@@ -42,14 +44,16 @@ offset_left = 32.6667
 offset_top = 32.6667
 offset_right = 96.6667
 offset_bottom = 96.6667
-max_value = 300.0
-value = 150.0
+max_value = 5.0
+value = 5.0
 rounded = true
 fill_mode = 5
 texture_progress = ExtResource("4_mvppp")
 tint_progress = Color(1, 0, 0, 1)
 radial_initial_angle = 45.0
-script = ExtResource("5_p87lc")
+
+[node name="Timer" type="Timer" parent="ui/cronometro/reloj"]
+wait_time = 5.0
 
 [node name="score" type="Label" parent="ui"]
 z_index = 1
@@ -90,3 +94,5 @@ max_value = 3.0
 fill_mode = 1
 texture_under = ExtResource("8_642uu")
 texture_progress = ExtResource("9_6681w")
+
+[connection signal="timeout" from="ui/cronometro/reloj/Timer" to="." method="_on_timer_timeout"]
