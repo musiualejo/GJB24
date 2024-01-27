@@ -4,7 +4,6 @@ extends Node2D
 
 signal Puntaje(float)
 signal FalloMinijuego()
-signal FinMinijuego()
 
 const NUMBER_OF_ITEMS := 4
 
@@ -36,6 +35,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if len(zones_picked) == len(zones): # Game has ended
+		return
 	if Input.is_action_just_pressed("ui_left"):
 		pick_item(0)
 	elif Input.is_action_just_pressed("ui_right"):
@@ -48,18 +49,14 @@ func _process(delta):
 
 func pick_item(item_index: int):
 	if items[item_index].frame == zone_index:
-		print("Success!")
 		zones_picked.append(zone_index)
 		pick_zone()
+		Puntaje.emit(puntaje)
 	else:
-		print("Failed!")
 		FalloMinijuego.emit()
 
 
 func pick_zone():
-	if len(zones_picked) == len(zones):
-		FinMinijuego.emit()
-		return
 	zone_index = get_random_zone_index()
 	while zone_index in zones_picked:
 		zone_index = get_random_zone_index()
