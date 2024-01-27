@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://cj6w6cfs10ii3"]
 
+[ext_resource type="Script" path="res://scripts/vestirse.gd" id="1_8g2iq"]
 [ext_resource type="PackedScene" uid="uid://dv8ucucgfflg7" path="res://scenes/personaje.tscn" id="1_dh5m7"]
-[ext_resource type="Script" path="res://scripts/bus.gd" id="1_ymrkk"]
 [ext_resource type="Texture2D" uid="uid://3nqsboe8fa6h" path="res://sprites/objetos/shadow.png" id="2_5wp4f"]
 [ext_resource type="PackedScene" uid="uid://0m73ajpn738j" path="res://scenes/objetos/armario.tscn" id="2_ux4kg"]
 [ext_resource type="Texture2D" uid="uid://bmwddnxlr7lby" path="res://sprites/fondos/fondovacio.png" id="2_xkexj"]
 [ext_resource type="PackedScene" uid="uid://75pr6pmf5ovg" path="res://scenes/flecha.tscn" id="6_ud5sp"]
 
 [node name="minijuego" type="Node2D"]
-script = ExtResource("1_ymrkk")
+script = ExtResource("1_8g2iq")
 
 [node name="personaje" parent="." instance=ExtResource("1_dh5m7")]
 z_index = 2
