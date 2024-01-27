@@ -1,7 +1,84 @@
-[gd_scene load_steps=3 format=3 uid="uid://bhcnsnon22h1i"]
+[gd_scene load_steps=12 format=3 uid="uid://bhcnsnon22h1i"]
 
 [ext_resource type="Script" path="res://scripts/bus.gd" id="1_byqdt"]
+[ext_resource type="Texture2D" uid="uid://w4dlf3dk6bop" path="res://sprites/personaje/run_character.png" id="3_8y3in"]
+[ext_resource type="Texture2D" uid="uid://c2fqtlflgbvle" path="res://sprites/objetos/bus_station.png" id="4_w12w3"]
 [ext_resource type="Texture2D" uid="uid://bmwddnxlr7lby" path="res://sprites/fondos/fondovacio.png" id="5_jtv6f"]
+[ext_resource type="Texture2D" uid="uid://b1m0pxtkxos38" path="res://sprites/objetos/bus.png" id="5_twma0"]
+
+[sub_resource type="Animation" id="Animation_m0hyf"]
+resource_name = "correman"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1), Vector2(0, -1), Vector2(0, -6), Vector2(0, -4), Vector2(0, 0), Vector2(0, -1), Vector2(0, -1), Vector2(0, -6), Vector2(0, -4)]
+}
+
+[sub_resource type="Animation" id="Animation_la3kj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qi0hm"]
+_data = {
+"RESET": SubResource("Animation_la3kj"),
+"correman": SubResource("Animation_m0hyf")
+}
+
+[sub_resource type="Animation" id="Animation_62ymt"]
+resource_name = "bus rattling"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bus:offset")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-2, 0), Vector2(0, -2), Vector2(0, 2), Vector2(2, 0), Vector2(0, 0), Vector2(-2, 0), Vector2(0, -2), Vector2(0, 2), Vector2(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qglt1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bus:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-2, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q40j3"]
+_data = {
+"RESET": SubResource("Animation_qglt1"),
+"bus rattling": SubResource("Animation_62ymt")
+}
 
 [node name="minijuego" type="Node2D"]
 script = ExtResource("1_byqdt")
@@ -9,3 +86,37 @@ script = ExtResource("1_byqdt")
 [node name="fondo" type="Sprite2D" parent="."]
 texture = ExtResource("5_jtv6f")
 centered = false
+
+[node name="personaje" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(484, 447)
+scale = Vector2(2, 2)
+texture = ExtResource("3_8y3in")
+
+[node name="animacion" type="AnimationPlayer" parent="personaje"]
+libraries = {
+"": SubResource("AnimationLibrary_qi0hm")
+}
+autoplay = "correman"
+speed_scale = 2.0
+
+[node name="llegada" type="Node2D" parent="."]
+z_index = 2
+position = Vector2(656, 460)
+
+[node name="busstation" type="Sprite2D" parent="llegada"]
+z_index = 2
+position = Vector2(54, 4)
+texture = ExtResource("4_w12w3")
+
+[node name="bus" type="Sprite2D" parent="llegada"]
+z_index = 1
+position = Vector2(-59, -24)
+texture = ExtResource("5_twma0")
+offset = Vector2(-2, 0)
+
+[node name="animacion" type="AnimationPlayer" parent="llegada"]
+libraries = {
+"": SubResource("AnimationLibrary_q40j3")
+}
+autoplay = "bus rattling"

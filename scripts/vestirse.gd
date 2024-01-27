@@ -1,5 +1,8 @@
 extends Node2D
 
+@export var puntaje: int = 10
+
+signal Puntaje(float)
 signal FalloMinijuego()
 signal FinMinijuego()
 

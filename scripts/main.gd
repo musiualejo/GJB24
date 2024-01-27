@@ -10,8 +10,10 @@ var verbo := "espera"
 
 # NODOS
 
-var nMinijuego
-var nVerbo
+@onready var lives_bar: TextureProgressBar = $ui/vidas
+@onready var nMinijuego = $minijuego
+@onready var nVerbo = $ui/verbo
+@onready var nScore: Label = $ui/score
 
 # SEÑALES
 
