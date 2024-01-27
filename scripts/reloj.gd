@@ -1,5 +1,7 @@
 extends Sprite2D
 
+class_name MinigameTimer
+
 @export var duration: int = 5
 
 @onready var progress_bar: TextureProgressBar = $tiempo
@@ -15,3 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	progress_bar.value = timer.time_left
+
+
+func reset():
+	timer.start(duration)

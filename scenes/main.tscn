@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://xbueol6ankih"]
+[gd_scene load_steps=11 format=3 uid="uid://xbueol6ankih"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_3c80d"]
 [ext_resource type="PackedScene" uid="uid://cj6w6cfs10ii3" path="res://scenes/minijuegos/vestirse.tscn" id="1_ytgol"]
+[ext_resource type="PackedScene" uid="uid://cwbofkkm0rpoo" path="res://scenes/minijuegos/carriles.tscn" id="2_b7sen"]
 [ext_resource type="FontFile" uid="uid://cushshrwx547c" path="res://fonts/karmaFuture.ttf" id="3_2pv2q"]
 [ext_resource type="Texture2D" uid="uid://d2pjyoi7torhj" path="res://sprites/ui/cronometro.png" id="3_mtvjr"]
 [ext_resource type="Script" path="res://scripts/reloj.gd" id="4_est3w"]
@@ -12,7 +13,7 @@
 
 [node name="treeRoot" type="Node2D"]
 script = ExtResource("1_3c80d")
-minigames = Array[PackedScene]([ExtResource("1_ytgol")])
+minigames = Array[PackedScene]([ExtResource("1_ytgol"), ExtResource("2_b7sen")])
 
 [node name="minijuego" parent="." instance=ExtResource("1_ytgol")]
 
@@ -111,10 +112,10 @@ text = "[center][shake rate=30.0 level=15 connected=1]
 GAME OVER
 !GOOD LUCK NEXT TIME![/shake][/center]"
 
-[connection signal="timeout" from="ui/cronometro/reloj/Timer" to="." method="_on_timer_timeout"]
-
 [node name="Polygon2D" type="Polygon2D" parent="ui/gameover"]
 z_index = -1
 position = Vector2(0, 199)
 color = Color(0, 0, 0, 0.6)
 polygon = PackedVector2Array(0, -199, 0, 521, 1280, 521, 1280, -198)
+
+[connection signal="timeout" from="ui/cronometro/reloj/Timer" to="." method="_on_timer_timeout"]
