@@ -1,9 +1,75 @@
-[gd_scene load_steps=3 format=3 uid="uid://xbueol6ankih"]
+[gd_scene load_steps=7 format=3 uid="uid://xbueol6ankih"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_3c80d"]
 [ext_resource type="PackedScene" uid="uid://cj6w6cfs10ii3" path="res://scenes/minijuegos/vestirse.tscn" id="1_ytgol"]
+[ext_resource type="FontFile" uid="uid://cushshrwx547c" path="res://fonts/karmaFuture.ttf" id="3_2pv2q"]
+[ext_resource type="Texture2D" uid="uid://d2pjyoi7torhj" path="res://sprites/ui/cronometro.png" id="3_mtvjr"]
+[ext_resource type="Texture2D" uid="uid://bqglb2llgk8re" path="res://sprites/ui/progreso_cronometro.png" id="4_mvppp"]
+[ext_resource type="Script" path="res://scripts/cronometro.gd" id="5_p87lc"]
 
 [node name="treeRoot" type="Node2D"]
 script = ExtResource("1_3c80d")
 
-[node name="Vestirse" parent="." instance=ExtResource("1_ytgol")]
+[node name="minijuego" parent="." instance=ExtResource("1_ytgol")]
+
+[node name="ui" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="cronometro" type="Control" parent="ui"]
+anchors_preset = 0
+offset_right = 67.0
+offset_bottom = 51.0
+
+[node name="reloj" type="Sprite2D" parent="ui/cronometro"]
+z_index = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_mtvjr")
+centered = false
+
+[node name="frame" type="Polygon2D" parent="ui/cronometro/reloj"]
+z_index = -1
+scale = Vector2(1.20202, 1.22981)
+polygon = PackedVector2Array(0, 0, 0, 176, 176, 0)
+
+[node name="tiempo" type="TextureProgressBar" parent="ui/cronometro/reloj"]
+offset_left = 32.6667
+offset_top = 32.6667
+offset_right = 96.6667
+offset_bottom = 96.6667
+value = 75.0
+rounded = true
+fill_mode = 5
+texture_progress = ExtResource("4_mvppp")
+tint_progress = Color(1, 0, 0, 1)
+radial_initial_angle = 45.0
+script = ExtResource("5_p87lc")
+
+[node name="score" type="Label" parent="ui"]
+z_index = 1
+layout_mode = 0
+offset_left = 1099.0
+offset_right = 1280.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("3_2pv2q")
+theme_override_font_sizes/font_size = 64
+text = "0000
+"
+
+[node name="frame" type="Polygon2D" parent="ui/score"]
+z_index = -1
+scale = Vector2(1.20202, 1.22981)
+polygon = PackedVector2Array(150.58, 69.9293, 40.7647, 89.4444, -18.3026, 63.4242, -25.7899, 0, -41.5966, 0, -31.6135, 78.8737, 36.605, 112.212, 150.58, 87.005)
+
+[node name="verbo" type="RichTextLabel" parent="ui"]
+z_index = 1
+layout_mode = 0
+offset_top = 620.0
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_fonts/normal_font = ExtResource("3_2pv2q")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[shake rate=30.0 level=15 connected=1][center]¡ VISTETE ![/center][/shake]"
