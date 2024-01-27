@@ -2,6 +2,8 @@ extends Node2D
 
 class_name Vestirse
 
+@export var puntaje: int = 10
+
 signal Puntaje(float)
 signal FalloMinijuego()
 
@@ -51,6 +53,7 @@ func pick_item(item_index: int):
 	if items[item_index].frame == zone_index:
 		zones_picked.append(zone_index)
 		pick_zone()
+		Puntaje.emit(puntaje)
 	else:
 		FalloMinijuego.emit()
 
