@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dv8ucucgfflg7"]
+[gd_scene load_steps=8 format=3 uid="uid://dv8ucucgfflg7"]
 
 [ext_resource type="Texture2D" uid="uid://nmy68dfrqnge" path="res://sprites/personaje/head.png" id="1_y7rc7"]
 [ext_resource type="Texture2D" uid="uid://cnu8blvrtfdtl" path="res://sprites/personaje/torso.png" id="2_ayxco"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bpfxxkfjpb4n1" path="res://sprites/personaje/brazoder.png" id="4_tkntd"]
 [ext_resource type="Texture2D" uid="uid://bd5elpqrk7ggk" path="res://sprites/personaje/piernas.png" id="5_exdnr"]
 [ext_resource type="Texture2D" uid="uid://1r5f2kbfy058" path="res://sprites/personaje/pies.png" id="6_a7tyu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_imxnw"]
+size = Vector2(58, 143)
 
 [node name="personaje" type="Node2D"]
 z_index = 1
@@ -45,3 +48,9 @@ centered = false
 position = Vector2(14, 124)
 texture = ExtResource("6_a7tyu")
 centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(46, 80.5)
+shape = SubResource("RectangleShape2D_imxnw")

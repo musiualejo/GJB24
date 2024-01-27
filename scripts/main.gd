@@ -17,6 +17,7 @@ var current_minigame_index := 0
 @onready var nMinijuego = $minijuego
 @onready var nVerbo = $ui/verbo
 @onready var nScore: Label = $ui/score
+@onready var nTimer: MinigameTimer = $ui/cronometro/reloj
 
 # SEÑALES
 
@@ -38,19 +39,22 @@ func _increase_score(amount: int):
 func _failed_minigame():
 	lives_bar.value += lives_bar.step
 	if lives_bar.value == lives_bar.max_value:
-		get_tree().paused = true
+		get_tree().paused = true # Game over
 	_next_minigame()
 
 
 func _next_minigame():
-	nMinijuego.queue_free()
-	var new_minigame_index = (current_minigame_index + 1) % len(minigames)
-	var next_minigame = minigames[new_minigame_index]
+	if nMinijuego:
+		nMinijuego.queue_free()
+	current_minigame_index = (current_minigame_index + 1) % len(minigames)
+	var next_minigame = minigames[current_minigame_index]
 	var instance = next_minigame.instantiate()
 	instance.FalloMinijuego.connect(_failed_minigame)
+	instance.Puntaje.connect(_increase_score)
 	add_child(instance)
 	move_child(instance, 0)
 	nMinijuego = instance
+	nTimer.reset()
 
 
 func cargarMinijuego():
