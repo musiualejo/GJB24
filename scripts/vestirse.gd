@@ -23,6 +23,7 @@ var zones_picked: Array[int] = []
 	$armario/estante/item_up,
 	$armario/estante/item_down,
 ]
+var started := false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,6 +34,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not started:
+		return
 	if len(zones_picked) == len(zones): # Game has ended
 		return
 	if Input.is_action_just_pressed("ui_left"):
@@ -79,3 +82,7 @@ func get_random_item_index(index_to_exclude: int):
 
 func get_random_zone_index():
 	return randi() % len(zones)
+
+
+func start():
+	started = true

@@ -11,10 +11,13 @@ var verbo := "corre y pilla el bus"
 var lastKey = 0
 var growthRate = 0.08
 var reached := false
+var started := false
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not started:
+		return
 	if Input.is_action_just_pressed("ui_left") and (lastKey != 1):
 		lastKey = 1
 		$personaje.flip_h = !$personaje.flip_h
@@ -26,3 +29,7 @@ func _process(delta):
 	if $llegada.scale >= Vector2(3, 3) and not reached:
 		Puntaje.emit(score_to_award)
 		reached = true
+
+
+func start():
+	started = true

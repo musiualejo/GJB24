@@ -27,3 +27,8 @@ func _process(delta):
 
 func reset():
 	timer.start(duration)
+	timer.paused = true
+
+
+func unpause():
+	timer.paused = false
