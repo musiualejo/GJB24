@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var items_to_spawn: Array[PackedScene]
+@export var score_per_second := 10
 
 @onready var player = $personaje
 @onready var first_street_location = $fondo/first_street
@@ -8,6 +9,7 @@ extends Node2D
 @onready var first_spawn_point = $spawn_positions/first_street
 @onready var second_spawn_point = $spawn_positions/second_street
 @onready var spawn_timer = $spawn_timer
+@onready var score_timer = $score_timer
 var movement_script = load("res://scripts/movement.gd")
 
 const NUMBER_OF_ITEMS := 4
@@ -20,6 +22,8 @@ func _ready():
 	randomize()
 	spawn_timer.start(0.5)
 	spawn_timer.one_shot = false
+	score_timer.start(1)
+	score_timer.one_shot = false
 	player.global_position = first_street_location.global_position - Vector2(0, 64)
 
 
@@ -56,3 +60,7 @@ func _on_collision(area: Area2D):
 
 func _on_spawn_timer_timeout():
 	_spawn_item()
+
+
+func _on_score_timer_timeout():
+	Puntaje.emit(score_per_second)
