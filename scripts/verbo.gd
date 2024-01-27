@@ -11,4 +11,4 @@ func _ready():
 #	pass
 
 func actualizaVerbo():
-	text = "[shake rate=30.0 level=15 connected=1][center]¡ " + main.verbo + " ![/center][/shake]"
+	text = "[shake rate=30.0 level=15 connected=1][center]¡ " + main.verbo.to_upper() + " ![/center][/shake]"
