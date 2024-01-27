@@ -1,5 +1,7 @@
 extends Node2D
 
+var verbo := "esquiva"
+
 @export var items_to_spawn: Array[PackedScene]
 @export var score_per_second := 10
 

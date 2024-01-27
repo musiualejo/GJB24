@@ -12,10 +12,6 @@ var lastKey = 0
 var growthRate = 0.08
 var reached := false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	main.verbo = verbo
-	main.cargarMinijuego()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

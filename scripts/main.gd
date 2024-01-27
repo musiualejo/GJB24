@@ -6,7 +6,6 @@ var score := 0
 var vidas := 3
 
 var ritmo := 1
-var verbo := "espera"
 
 var current_minigame_index := 0
 @export var minigames: Array[PackedScene] = []
@@ -29,6 +28,7 @@ func _ready():
 	if nMinijuego:
 		nMinijuego.FalloMinijuego.connect(_failed_minigame)
 		nMinijuego.Puntaje.connect(_increase_score)
+		nVerbo.actualizaVerbo(nMinijuego.verbo)
 
 
 func _increase_score(amount: int):
@@ -55,11 +55,7 @@ func _next_minigame():
 	move_child(instance, 0)
 	nMinijuego = instance
 	nTimer.reset()
-
-
-func cargarMinijuego():
-	if nMinijuego:
-		nVerbo.actualizaVerbo()
+	nVerbo.actualizaVerbo(nMinijuego.verbo)
 
 
 func _on_timer_timeout():

@@ -7,7 +7,7 @@ signal FalloMinijuego()
 
 const NUMBER_OF_ITEMS := 4
 
-var verbo := "corre y pilla el bus"
+var verbo := "vistete"
 var chosen_frame = null
 var zone_index = null
 var zones_picked: Array[int] = []
@@ -27,8 +27,6 @@ var zones_picked: Array[int] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	main.verbo = verbo
-	main.cargarMinijuego()
 	randomize()
 	pick_zone()
 
