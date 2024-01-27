@@ -3,7 +3,7 @@ extends Node2D
 #VARIABLES
 
 var ritmo = 1
-var verbo = "ESPERA"
+var verbo := "espera"
 
 var nMinijuego
 var nVerbo
@@ -23,6 +23,5 @@ func _process(delta):
 	pass
 
 func cargarMinijuego():
-	if (nMinijuego):
-		print(str(verbo))
+	if nMinijuego:
 		nVerbo.actualizaVerbo()
