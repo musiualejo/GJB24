@@ -14,7 +14,7 @@ var current_minigame_index := 0
 # NODOS
 
 @onready var lives_bar: TextureProgressBar = $ui/vidas
-@onready var nMinijuego: Vestirse = $minijuego
+@onready var nMinijuego = $minijuego
 @onready var nVerbo = $ui/verbo
 @onready var nScore: Label = $ui/score
 
