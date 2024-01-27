@@ -2,8 +2,13 @@ extends Node2D
 
 #VARIABLES
 
+var score = 0
+var vidas = 3
+
 var ritmo = 1
 var verbo := "espera"
+
+# NODOS
 
 var nMinijuego
 var nVerbo

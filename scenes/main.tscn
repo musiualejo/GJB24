@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://xbueol6ankih"]
+[gd_scene load_steps=10 format=3 uid="uid://xbueol6ankih"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_3c80d"]
 [ext_resource type="PackedScene" uid="uid://cj6w6cfs10ii3" path="res://scenes/minijuegos/vestirse.tscn" id="1_ytgol"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bqglb2llgk8re" path="res://sprites/ui/progreso_cronometro.png" id="4_mvppp"]
 [ext_resource type="Script" path="res://scripts/cronometro.gd" id="5_p87lc"]
 [ext_resource type="Script" path="res://scripts/verbo.gd" id="7_l4nrt"]
+[ext_resource type="Texture2D" uid="uid://dpluvvesaufjp" path="res://sprites/ui/crosses_frame.png" id="8_642uu"]
+[ext_resource type="Texture2D" uid="uid://b5uhupt5tu2ty" path="res://sprites/ui/crosses_redpng.png" id="9_6681w"]
 
 [node name="treeRoot" type="Node2D"]
 script = ExtResource("1_3c80d")
@@ -40,7 +42,7 @@ offset_left = 32.6667
 offset_top = 32.6667
 offset_right = 96.6667
 offset_bottom = 96.6667
-max_value = 200.0
+max_value = 300.0
 value = 150.0
 rounded = true
 fill_mode = 5
@@ -76,3 +78,15 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[shake rate=30.0 level=15 connected=1][center]¡ BLANK ![/center][/shake]"
 script = ExtResource("7_l4nrt")
+
+[node name="vidas" type="TextureProgressBar" parent="ui"]
+z_index = 2
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 84.0
+offset_right = 1275.0
+offset_bottom = 212.0
+max_value = 3.0
+fill_mode = 1
+texture_under = ExtResource("8_642uu")
+texture_progress = ExtResource("9_6681w")
