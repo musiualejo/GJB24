@@ -6,7 +6,7 @@ signal Success()
 
 var verbo := "dodge"
 
-@export var items_to_spawn: Array[PackedScene]
+var item = load("res://scenes/objetos/object.tscn")
 @export var score_per_second := 10
 
 @onready var player = $personaje
@@ -19,7 +19,7 @@ var verbo := "dodge"
 var movement_script = load("res://scripts/movement.gd")
 var started := false
 
-const NUMBER_OF_ITEMS := 4
+const NUMBER_OF_ITEMS := 12
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,10 +44,13 @@ func go_to_first_street():
 func go_to_second_street():
 	player.global_position = second_street_location.global_position - Vector2(0, 64)
 
+var random_item
+var random_spawn_point
 
 func _spawn_item():
-	var random_item = items_to_spawn[randi() % NUMBER_OF_ITEMS].instantiate()
-	var random_spawn_point = first_spawn_point if randi() % 2 == 0 else second_spawn_point
+	random_item = item.instantiate()
+	random_item.get_node("Sprite2D").frame = randi() % NUMBER_OF_ITEMS
+	random_spawn_point = first_spawn_point if randi() % 2 == 0 else second_spawn_point
 	random_item.set_script(movement_script)
 	add_child(random_item)
 	random_item.add_to_group("hazards")

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdlkom8rpc2j"]
+
+[ext_resource type="Texture2D" uid="uid://c2np8ralfhd74" path="res://sprites/ui/up_key.png" id="1_nrnv8"]
+[ext_resource type="Texture2D" uid="uid://yekcjo6cvk2i" path="res://sprites/ui/right_key.png" id="2_bbkpm"]
+[ext_resource type="Texture2D" uid="uid://dd61u8mcw1y84" path="res://sprites/ui/down_key.png" id="3_56ghb"]
+[ext_resource type="Texture2D" uid="uid://b8kd5ahl8447b" path="res://sprites/ui/left_key.png" id="4_3u7lm"]
+
+[node name="cruceta" type="Node2D"]
+
+[node name="up" type="Sprite2D" parent="."]
+position = Vector2(0, -80)
+texture = ExtResource("1_nrnv8")
+
+[node name="right" type="Sprite2D" parent="."]
+position = Vector2(144, 0)
+texture = ExtResource("2_bbkpm")
+
+[node name="down" type="Sprite2D" parent="."]
+position = Vector2(0, 64)
+texture = ExtResource("3_56ghb")
+
+[node name="left" type="Sprite2D" parent="."]
+position = Vector2(-144, 0)
+texture = ExtResource("4_3u7lm")
