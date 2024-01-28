@@ -77,6 +77,11 @@ z_index = -1
 scale = Vector2(1.20202, 1.22981)
 polygon = PackedVector2Array(150.58, 69.9293, 40.7647, 89.4444, -30.7815, 58.5456, -25.7899, 0, -52.4117, 0, -54.9076, 72.3689, 36.605, 112.212, 150.58, 87.005)
 
+[node name="bg" type="Polygon2D" parent="ui/score"]
+z_index = -1
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(181, 0, -31, 0, -37, 72, 49, 110, 181, 86)
+
 [node name="vidas" type="TextureProgressBar" parent="ui"]
 z_index = 4
 layout_mode = 0

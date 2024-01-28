@@ -9,6 +9,8 @@ signal Success()
 
 var verbo := "catch the bus"
 
+var win_texture = preload("res://sprites/personaje/run_character_win.png")
+
 var lastKey = 0
 var growthRate = 0.08
 var reached := false
@@ -28,6 +30,7 @@ func _process(delta):
 		lastKey = 2
 		$llegada.scale = Vector2($llegada.scale.x+growthRate,$llegada.scale.y+growthRate)
 	if $llegada.scale >= Vector2(3, 3) and not reached:
+		$personaje.set_texture(win_texture)
 		Success.emit()
 		Puntaje.emit(score_to_award)
 		reached = true

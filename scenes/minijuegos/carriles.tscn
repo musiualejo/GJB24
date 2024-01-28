@@ -1,11 +1,33 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwbofkkm0rpoo"]
+[gd_scene load_steps=18 format=3 uid="uid://cwbofkkm0rpoo"]
 
 [ext_resource type="Script" path="res://scripts/carriles.gd" id="1_6jwjv"]
 [ext_resource type="Texture2D" uid="uid://dt3fcwww1op1n" path="res://sprites/fondos/fondocalle.png" id="2_8nyug"]
+[ext_resource type="Texture2D" uid="uid://btycf7mwxtclu" path="res://sprites/fondos/acera.png" id="3_kgua2"]
+[ext_resource type="Script" path="res://scripts/acera.gd" id="4_ghv8l"]
+[ext_resource type="Material" uid="uid://clq2x4fw4cd0f" path="res://shaders/white_outline_material.tres" id="5_og3ij"]
+[ext_resource type="FontFile" uid="uid://cushshrwx547c" path="res://fonts/karmaFuture.ttf" id="6_4nff5"]
 [ext_resource type="Texture2D" uid="uid://cbqse17brb3jy" path="res://sprites/personaje/road_characters.png" id="7_6o68s"]
+[ext_resource type="Material" uid="uid://bbviw8f4sge1f" path="res://shaders/yellow_outline_material.tres" id="7_v5knf"]
+[ext_resource type="Texture2D" uid="uid://c2np8ralfhd74" path="res://sprites/ui/up_key.png" id="8_bseif"]
+[ext_resource type="Texture2D" uid="uid://dd61u8mcw1y84" path="res://sprites/ui/down_key.png" id="10_qg03w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02l2u"]
 size = Vector2(59, 58)
+
+[sub_resource type="Animation" id="Animation_axy5r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("body:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_qlmen"]
 resource_name = "player_jiggle"
@@ -24,25 +46,73 @@ tracks/0/keys = {
 "values": [0.0, 0.261799, -0.174533, -0.349066, -0.261799, -0.0872665]
 }
 
-[sub_resource type="Animation" id="Animation_axy5r"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rhv1y"]
+_data = {
+"RESET": SubResource("Animation_axy5r"),
+"player_jiggle": SubResource("Animation_qlmen")
+}
+
+[sub_resource type="Animation" id="Animation_rl0y5"]
+resource_name = "up&downArrows"
+length = 1.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("up:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(642.6, 80), Vector2(642.6, 78), Vector2(642.6, 76), Vector2(642.6, 75), Vector2(642.6, 74), Vector2(642.6, 75), Vector2(642.6, 76), Vector2(642.6, 78)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("down:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(636, 226), Vector2(636, 228), Vector2(636, 230), Vector2(636, 231), Vector2(636, 232), Vector2(636, 231), Vector2(636, 230), Vector2(636, 228)]
+}
+
+[sub_resource type="Animation" id="Animation_420ms"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("body:rotation")
+tracks/0/path = NodePath("up:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.0]
+"values": [Vector2(642.6, 80)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("down:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(636, 226)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_rhv1y"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hprho"]
 _data = {
-"RESET": SubResource("Animation_axy5r"),
-"player_jiggle": SubResource("Animation_qlmen")
+"RESET": SubResource("Animation_420ms"),
+"up&downArrows": SubResource("Animation_rl0y5")
 }
 
 [node name="minijuego" type="Node2D"]
@@ -58,11 +128,98 @@ position = Vector2(250, 350)
 [node name="second_street" type="Node2D" parent="fondo"]
 position = Vector2(250, 515)
 
+[node name="aceras" type="Node2D" parent="fondo"]
+
+[node name="acera1" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(0, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera2" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(128, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera3" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(256, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera4" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(384, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera5" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(512, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera6" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(640, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera7" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(768, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera8" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(896, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera9" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(1024, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera10" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(1152, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera11" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(1280, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
+[node name="acera12" type="Sprite2D" parent="fondo/aceras"]
+position = Vector2(1408, 220)
+scale = Vector2(1, 1.1)
+texture = ExtResource("3_kgua2")
+centered = false
+script = ExtResource("4_ghv8l")
+
 [node name="personaje" type="Node2D" parent="."]
 position = Vector2(48, 288)
 scale = Vector2(2, 2)
 
 [node name="body" type="Sprite2D" parent="personaje"]
+material = ExtResource("5_og3ij")
 position = Vector2(40.5, 41)
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("7_6o68s")
@@ -92,6 +249,40 @@ position = Vector2(1300, 515)
 [node name="spawn_timer" type="Timer" parent="."]
 
 [node name="score_timer" type="Timer" parent="."]
+
+[node name="flechas" type="Node2D" parent="."]
+z_index = 6
+
+[node name="hint" type="RichTextLabel" parent="flechas"]
+z_index = 5
+offset_top = 99.0
+offset_right = 1280.0
+offset_bottom = 199.0
+theme_override_fonts/normal_font = ExtResource("6_4nff5")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[wave amp=60.0 freq=10 connected=1][center]CHANGE LANES[/center][/wave]"
+
+[node name="up" type="Sprite2D" parent="flechas"]
+z_index = 4
+material = ExtResource("7_v5knf")
+position = Vector2(642.6, 80)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("8_bseif")
+
+[node name="down" type="Sprite2D" parent="flechas"]
+z_index = 4
+material = ExtResource("7_v5knf")
+position = Vector2(636, 226)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("10_qg03w")
+
+[node name="animacion" type="AnimationPlayer" parent="flechas"]
+libraries = {
+"": SubResource("AnimationLibrary_hprho")
+}
+autoplay = "up&downArrows"
+speed_scale = 2.0
 
 [connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="score_timer" to="." method="_on_score_timer_timeout"]
