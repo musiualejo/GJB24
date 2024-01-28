@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dl1xvmbiityid"]
+[gd_scene load_steps=17 format=3 uid="uid://dl1xvmbiityid"]
 
 [ext_resource type="Script" path="res://scripts/cafe.gd" id="1_78v5d"]
 [ext_resource type="Texture2D" uid="uid://uxg1pptf2fv3" path="res://sprites/personaje/coffee_characters.png" id="2_scn8g"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://yekcjo6cvk2i" path="res://sprites/ui/right_key.png" id="10_mstoi"]
 [ext_resource type="Texture2D" uid="uid://dd61u8mcw1y84" path="res://sprites/ui/down_key.png" id="11_klooq"]
 [ext_resource type="Texture2D" uid="uid://b8kd5ahl8447b" path="res://sprites/ui/left_key.png" id="12_104bw"]
+[ext_resource type="Texture2D" uid="uid://b7p7k03vimb63" path="res://sprites/objetos/coffee.png" id="13_vkmih"]
 
 [sub_resource type="Animation" id="Animation_celnd"]
 length = 0.001
@@ -248,3 +249,11 @@ libraries = {
 "": SubResource("AnimationLibrary_4gjlm")
 }
 autoplay = "arrows_bop"
+
+[node name="coffee" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(630, 363)
+scale = Vector2(2, 2)
+texture = ExtResource("13_vkmih")
+offset = Vector2(20, 0)
+flip_h = true

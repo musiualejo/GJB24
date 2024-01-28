@@ -1,7 +1,9 @@
 extends Sprite2D
 
+signal FalloMinijuego()
+
 var startingStamina = 100
-var tiringRate = 6
+var tiringRate = 10
 var tempo = 0.8
 var timer = tempo
 
@@ -26,7 +28,10 @@ func _process(delta):
 		elif ($stamina.value >= 30):
 			frame = 2
 			$stamina.tint_progress = Color(1.00, 0.62, 0.11)
-		else:
+		elif($stamina.value > 0):
 			frame = 3
 			$stamina.tint_progress = Color(1.00, 0.22, 0.11)
+	
+	#if ($stamina.value <= 0):
+	#	main._failed_minigame()
 	
