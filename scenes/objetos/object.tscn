@@ -1,13 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://m8r2bbb17tso"]
+[gd_scene load_steps=3 format=3 uid="uid://d3353elnqpmc2"]
 
-[ext_resource type="Texture2D" uid="uid://kvhk6x23wt2h" path="res://sprites/objetos/items_armario.png" id="1_pjjv7"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l2me1"]
+load_path = "res://.godot/imported/items_armario.png-5db9ff686f6770a3b6ffc6f5c45c50ba.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d655s"]
 
 [node name="Camisa" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_pjjv7")
+texture = SubResource("CompressedTexture2D_l2me1")
 hframes = 6
 vframes = 4
 

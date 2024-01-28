@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://0m73ajpn738j"]
 
-[ext_resource type="Texture2D" uid="uid://bfhn08wub2hht" path="res://sprites/objetos/armario.png" id="1_fxhfo"]
-[ext_resource type="Texture2D" uid="uid://kvhk6x23wt2h" path="res://sprites/objetos/items_armario.png" id="2_pd25v"]
+[ext_resource type="Texture2D" uid="uid://ba5f3rqpuhqc4" path="res://sprites/objetos/armario_sinpuertas.png" id="1_ht77w"]
+[ext_resource type="Texture2D" uid="uid://g7jjs2dctanu" path="res://sprites/objetos/items_armario.png" id="2_pd25v"]
 
 [node name="armario" type="Node2D"]
 
 [node name="estante" type="Sprite2D" parent="."]
-texture = ExtResource("1_fxhfo")
+texture = ExtResource("1_ht77w")
 centered = false
 
 [node name="item_right" type="Sprite2D" parent="estante"]
@@ -16,7 +16,6 @@ texture = ExtResource("2_pd25v")
 centered = false
 hframes = 6
 vframes = 4
-frame = 1
 
 [node name="item_down" type="Sprite2D" parent="estante"]
 z_index = 1

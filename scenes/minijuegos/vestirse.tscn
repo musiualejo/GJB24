@@ -1,11 +1,126 @@
-[gd_scene load_steps=7 format=3 uid="uid://cj6w6cfs10ii3"]
+[gd_scene load_steps=14 format=3 uid="uid://cj6w6cfs10ii3"]
 
 [ext_resource type="Script" path="res://scripts/vestirse.gd" id="1_8g2iq"]
 [ext_resource type="PackedScene" uid="uid://dv8ucucgfflg7" path="res://scenes/personaje.tscn" id="1_dh5m7"]
 [ext_resource type="Texture2D" uid="uid://3nqsboe8fa6h" path="res://sprites/objetos/shadow.png" id="2_5wp4f"]
 [ext_resource type="PackedScene" uid="uid://0m73ajpn738j" path="res://scenes/objetos/armario.tscn" id="2_ux4kg"]
 [ext_resource type="Texture2D" uid="uid://bmwddnxlr7lby" path="res://sprites/fondos/fondovacio.png" id="2_xkexj"]
-[ext_resource type="PackedScene" uid="uid://75pr6pmf5ovg" path="res://scenes/flecha.tscn" id="6_ud5sp"]
+[ext_resource type="Material" uid="uid://bbviw8f4sge1f" path="res://shaders/yellow_outline_material.tres" id="5_b6xls"]
+[ext_resource type="Texture2D" uid="uid://c2np8ralfhd74" path="res://sprites/ui/up_key.png" id="6_e3ly1"]
+[ext_resource type="Texture2D" uid="uid://yekcjo6cvk2i" path="res://sprites/ui/right_key.png" id="7_4ohhi"]
+[ext_resource type="Texture2D" uid="uid://dd61u8mcw1y84" path="res://sprites/ui/down_key.png" id="8_naar8"]
+[ext_resource type="Texture2D" uid="uid://b8kd5ahl8447b" path="res://sprites/ui/left_key.png" id="9_sai0t"]
+
+[sub_resource type="Animation" id="Animation_k55w3"]
+resource_name = "arrows_bop"
+length = 1.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("up:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(80, 6), Vector2(80, 4), Vector2(80, 2), Vector2(80, 1), Vector2(80, 0), Vector2(80, 1), Vector2(80, 1), Vector2(80, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("right:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(152, 84), Vector2(154, 84), Vector2(156, 84), Vector2(157, 84), Vector2(158, 84), Vector2(157, 84), Vector2(156, 84), Vector2(154, 84)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("down:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(80, 146), Vector2(80, 148), Vector2(80, 150), Vector2(80, 151), Vector2(80, 150.921), Vector2(80, 151), Vector2(80, 151), Vector2(80, 151)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("left:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 84), Vector2(8, 84), Vector2(6, 84), Vector2(5, 84), Vector2(4, 84), Vector2(5, 84), Vector2(6, 84), Vector2(6, 84)]
+}
+
+[sub_resource type="Animation" id="Animation_celnd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("up:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("right:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 84)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("down:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 146)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("left:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 84)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4gjlm"]
+_data = {
+"RESET": SubResource("Animation_celnd"),
+"arrows_bop": SubResource("Animation_k55w3")
+}
 
 [node name="minijuego" type="Node2D"]
 script = ExtResource("1_8g2iq")
@@ -33,8 +148,38 @@ position = Vector2(88, 135.667)
 scale = Vector2(2, 1)
 texture = ExtResource("2_5wp4f")
 
+[node name="flechas" type="Node2D" parent="armario"]
+
+[node name="up" type="Sprite2D" parent="armario/flechas"]
+material = ExtResource("5_b6xls")
+position = Vector2(80, 6)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_e3ly1")
+
+[node name="right" type="Sprite2D" parent="armario/flechas"]
+material = ExtResource("5_b6xls")
+position = Vector2(152, 84)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_4ohhi")
+
+[node name="down" type="Sprite2D" parent="armario/flechas"]
+material = ExtResource("5_b6xls")
+position = Vector2(80, 146)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("8_naar8")
+
+[node name="left" type="Sprite2D" parent="armario/flechas"]
+material = ExtResource("5_b6xls")
+position = Vector2(10, 84)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_sai0t")
+
+[node name="animacion" type="AnimationPlayer" parent="armario/flechas"]
+libraries = {
+"": SubResource("AnimationLibrary_4gjlm")
+}
+autoplay = "arrows_bop"
+
 [node name="fondo" type="Sprite2D" parent="."]
 texture = ExtResource("2_xkexj")
 centered = false
-
-[node name="flecha" parent="." instance=ExtResource("6_ud5sp")]

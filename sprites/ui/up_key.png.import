@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g7jjs2dctanu"
-path="res://.godot/imported/items_armario.png-5db9ff686f6770a3b6ffc6f5c45c50ba.ctex"
+uid="uid://c2np8ralfhd74"
+path="res://.godot/imported/up_key.png-c557bf4f89c9c02e96c18a923bca9af6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/objetos/items_armario.png"
-dest_files=["res://.godot/imported/items_armario.png-5db9ff686f6770a3b6ffc6f5c45c50ba.ctex"]
+source_file="res://sprites/ui/up_key.png"
+dest_files=["res://.godot/imported/up_key.png-c557bf4f89c9c02e96c18a923bca9af6.ctex"]
 
 [params]
 
