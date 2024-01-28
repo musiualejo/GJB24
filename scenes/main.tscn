@@ -32,7 +32,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_mtvjr")
 centered = false
 script = ExtResource("4_est3w")
-duration = 1
+duration = 8
 
 [node name="frame" type="Polygon2D" parent="ui/cronometro/reloj"]
 z_index = -1
@@ -69,15 +69,15 @@ text = "0000
 [node name="frame" type="Polygon2D" parent="ui/score"]
 z_index = -1
 scale = Vector2(1.20202, 1.22981)
-polygon = PackedVector2Array(150.58, 69.9293, 40.7647, 89.4444, -30.7815, 58.5456, -25.7899, 0, -52.4117, 0, -54.9076, 72.3689, 36.605, 112.212, 150.58, 87.005)
+polygon = PackedVector2Array(150.58, 69.9293, 40.7647, 89.4444, -18.3026, 63.4242, -25.7899, 0, -41.5966, 0, -31.6135, 78.8737, 36.605, 112.212, 150.58, 87.005)
 
 [node name="vidas" type="TextureProgressBar" parent="ui"]
 z_index = 4
 layout_mode = 0
-offset_left = 930.0
-offset_top = 6.0
-offset_right = 1280.0
-offset_bottom = 214.0
+offset_left = 929.0
+offset_top = 1.0
+offset_right = 1279.0
+offset_bottom = 209.0
 max_value = 4.0
 fill_mode = 1
 texture_under = ExtResource("8_642uu")
