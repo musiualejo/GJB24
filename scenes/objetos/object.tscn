@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://d3353elnqpmc2"]
+[gd_scene load_steps=4 format=3 uid="uid://d3353elnqpmc2"]
+
+[ext_resource type="Material" uid="uid://clq2x4fw4cd0f" path="res://shaders/white_outline_material.tres" id="1_u8ncg"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_l2me1"]
 load_path = "res://.godot/imported/items_armario.png-5db9ff686f6770a3b6ffc6f5c45c50ba.ctex"
@@ -8,6 +10,7 @@ load_path = "res://.godot/imported/items_armario.png-5db9ff686f6770a3b6ffc6f5c45
 [node name="Camisa" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = ExtResource("1_u8ncg")
 texture = SubResource("CompressedTexture2D_l2me1")
 hframes = 6
 vframes = 4

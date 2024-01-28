@@ -11,6 +11,57 @@
 [ext_resource type="Texture2D" uid="uid://dd61u8mcw1y84" path="res://sprites/ui/down_key.png" id="8_naar8"]
 [ext_resource type="Texture2D" uid="uid://b8kd5ahl8447b" path="res://sprites/ui/left_key.png" id="9_sai0t"]
 
+[sub_resource type="Animation" id="Animation_celnd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("up:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("down:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 146)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("left:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 84)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("right:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 84)]
+}
+
 [sub_resource type="Animation" id="Animation_k55w3"]
 resource_name = "arrows_bop"
 length = 1.8
@@ -31,89 +82,38 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("right:position")
+tracks/1/path = NodePath("down:position")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(152, 84), Vector2(154, 84), Vector2(156, 84), Vector2(157, 84), Vector2(158, 84), Vector2(157, 84), Vector2(156, 84), Vector2(154, 84)]
+"values": [Vector2(80, 146), Vector2(80, 148), Vector2(80, 150), Vector2(80, 151), Vector2(80, 150.921), Vector2(80, 151), Vector2(80, 151), Vector2(80, 151)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("down:position")
+tracks/2/path = NodePath("left:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(80, 146), Vector2(80, 148), Vector2(80, 150), Vector2(80, 151), Vector2(80, 150.921), Vector2(80, 151), Vector2(80, 151), Vector2(80, 151)]
+"values": [Vector2(10, 84), Vector2(8, 84), Vector2(6, 84), Vector2(5, 84), Vector2(4, 84), Vector2(5, 84), Vector2(6, 84), Vector2(8, 84)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("left:position")
+tracks/3/path = NodePath("right:position")
 tracks/3/interp = 2
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(10, 84), Vector2(8, 84), Vector2(6, 84), Vector2(5, 84), Vector2(4, 84), Vector2(5, 84), Vector2(6, 84), Vector2(6, 84)]
-}
-
-[sub_resource type="Animation" id="Animation_celnd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("up:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(80, 6)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("right:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(152, 84)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("down:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(80, 146)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("left:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(10, 84)]
+"values": [Vector2(152, 84), Vector2(154, 84), Vector2(156, 84), Vector2(157, 84), Vector2(158, 84), Vector2(157, 84), Vector2(156, 84), Vector2(154, 84)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4gjlm"]

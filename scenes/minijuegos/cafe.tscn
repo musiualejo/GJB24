@@ -1,11 +1,128 @@
-[gd_scene load_steps=7 format=3 uid="uid://dl1xvmbiityid"]
+[gd_scene load_steps=16 format=3 uid="uid://dl1xvmbiityid"]
 
 [ext_resource type="Script" path="res://scripts/cafe.gd" id="1_78v5d"]
 [ext_resource type="Texture2D" uid="uid://uxg1pptf2fv3" path="res://sprites/personaje/coffee_characters.png" id="2_scn8g"]
 [ext_resource type="Texture2D" uid="uid://cm3dcxjkmiprs" path="res://sprites/personaje/office_coworker.png" id="3_k34n1"]
 [ext_resource type="Script" path="res://scripts/coworkers.gd" id="4_6t2yn"]
-[ext_resource type="Texture2D" uid="uid://cblewsrb8rc6e" path="res://sprites/fondos/fondo.png" id="4_m28pu"]
 [ext_resource type="Texture2D" uid="uid://d1svvggd1w65s" path="res://sprites/ui/coffee_progress.png" id="4_nga0y"]
+[ext_resource type="Texture2D" uid="uid://6e5dtkfckhv7" path="res://sprites/fondos/bg_office.png" id="6_xrsne"]
+[ext_resource type="Texture2D" uid="uid://daqp80cf8pcil" path="res://sprites/fondos/bottom_shadow.png" id="7_h2iqn"]
+[ext_resource type="Material" uid="uid://bbviw8f4sge1f" path="res://shaders/yellow_outline_material.tres" id="8_i053v"]
+[ext_resource type="Texture2D" uid="uid://c2np8ralfhd74" path="res://sprites/ui/up_key.png" id="9_uwx88"]
+[ext_resource type="Texture2D" uid="uid://yekcjo6cvk2i" path="res://sprites/ui/right_key.png" id="10_mstoi"]
+[ext_resource type="Texture2D" uid="uid://dd61u8mcw1y84" path="res://sprites/ui/down_key.png" id="11_klooq"]
+[ext_resource type="Texture2D" uid="uid://b8kd5ahl8447b" path="res://sprites/ui/left_key.png" id="12_104bw"]
+
+[sub_resource type="Animation" id="Animation_celnd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("up:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("right:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(152, 84)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("down:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(80, 146)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("left:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(10, 84)]
+}
+
+[sub_resource type="Animation" id="Animation_k55w3"]
+resource_name = "arrows_bop"
+length = 1.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("up:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(80, 6), Vector2(80, 4), Vector2(80, 2), Vector2(80, 1), Vector2(80, 0), Vector2(80, 1), Vector2(80, 1), Vector2(80, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("right:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(152, 84), Vector2(154, 84), Vector2(156, 84), Vector2(157, 84), Vector2(158, 84), Vector2(157, 84), Vector2(156, 84), Vector2(154, 84)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("down:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(80, 146), Vector2(80, 148), Vector2(80, 150), Vector2(80, 151), Vector2(80, 150.921), Vector2(80, 151), Vector2(80, 151), Vector2(80, 151)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("left:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1.2, 1.4, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(10, 84), Vector2(8, 84), Vector2(6, 84), Vector2(5, 84), Vector2(4, 84), Vector2(5, 84), Vector2(6, 84), Vector2(6, 84)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4gjlm"]
+_data = {
+"RESET": SubResource("Animation_celnd"),
+"arrows_bop": SubResource("Animation_k55w3")
+}
 
 [node name="minijuego" type="Node2D"]
 script = ExtResource("1_78v5d")
@@ -24,7 +141,7 @@ z_index = 1
 position = Vector2(640, 360)
 
 [node name="1" type="Sprite2D" parent="coworkers"]
-position = Vector2(0, 160)
+position = Vector2(0, 175)
 scale = Vector2(3, 3)
 texture = ExtResource("3_k34n1")
 hframes = 2
@@ -72,7 +189,7 @@ texture_progress_offset = Vector2(-32, -32)
 tint_progress = Color(0.290196, 1, 0.109804, 1)
 
 [node name="4" type="Sprite2D" parent="coworkers"]
-position = Vector2(0, -192)
+position = Vector2(0, -213)
 scale = Vector2(3, 3)
 texture = ExtResource("3_k34n1")
 hframes = 2
@@ -88,5 +205,46 @@ texture_progress_offset = Vector2(-32, -32)
 tint_progress = Color(0.290196, 1, 0.109804, 1)
 
 [node name="fondo" type="Sprite2D" parent="."]
-texture = ExtResource("4_m28pu")
+modulate = Color(0.807843, 0.807843, 0.807843, 1)
+position = Vector2(0, -85)
+scale = Vector2(2.19931, 2.19931)
+texture = ExtResource("6_xrsne")
 centered = false
+
+[node name="bottom_shadow" type="Sprite2D" parent="."]
+position = Vector2(640, 688.5)
+scale = Vector2(1, 1.95313)
+texture = ExtResource("7_h2iqn")
+
+[node name="flechas" type="Node2D" parent="."]
+position = Vector2(546, 264)
+
+[node name="up" type="Sprite2D" parent="flechas"]
+material = ExtResource("8_i053v")
+position = Vector2(80, 6)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_uwx88")
+
+[node name="right" type="Sprite2D" parent="flechas"]
+material = ExtResource("8_i053v")
+position = Vector2(152, 84)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("10_mstoi")
+
+[node name="down" type="Sprite2D" parent="flechas"]
+material = ExtResource("8_i053v")
+position = Vector2(80, 146)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("11_klooq")
+
+[node name="left" type="Sprite2D" parent="flechas"]
+material = ExtResource("8_i053v")
+position = Vector2(10, 84)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("12_104bw")
+
+[node name="animacion" type="AnimationPlayer" parent="flechas"]
+libraries = {
+"": SubResource("AnimationLibrary_4gjlm")
+}
+autoplay = "arrows_bop"
