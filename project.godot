@@ -26,6 +26,10 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/vsync/vsync_mode=0
 
+[editor]
+
+movie_writer/movie_file="D:/Videos/Godot Movies/run_record.avi"
+
 [input]
 
 ui_left={

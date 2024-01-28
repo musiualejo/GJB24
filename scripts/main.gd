@@ -50,6 +50,8 @@ func _failed_minigame():
 		hazard.get_node("Area2D").queue_free()
 	lives_bar.value += lives_bar.step
 	if lives_bar.value == lives_bar.max_value:
+		$ui/failure_message.hide()
+		$ui/gameover.show()
 		get_tree().paused = true # Game over
 
 
