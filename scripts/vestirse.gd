@@ -4,10 +4,11 @@ extends Node2D
 
 signal Puntaje(float)
 signal FalloMinijuego()
+signal Success()
 
 const NUMBER_OF_ITEMS := 4
 
-var verbo := "corre y pilla el bus"
+var verbo := "dress up"
 var chosen_frame = null
 var zone_index = null
 var zones_picked: Array[int] = []
@@ -23,18 +24,19 @@ var zones_picked: Array[int] = []
 	$armario/estante/item_up,
 	$armario/estante/item_down,
 ]
+var started := false
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	main.verbo = verbo
-	main.cargarMinijuego()
 	randomize()
 	pick_zone()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not started:
+		return
 	if len(zones_picked) == len(zones): # Game has ended
 		return
 	if Input.is_action_just_pressed("ui_left"):
@@ -58,6 +60,7 @@ func pick_item(item_index: int):
 
 func pick_zone():
 	if len(zones_picked) == len(zones):
+		Success.emit()
 		return
 	zone_index = get_random_zone_index()
 	while zone_index in zones_picked:
@@ -81,3 +84,11 @@ func get_random_item_index(index_to_exclude: int):
 
 func get_random_zone_index():
 	return randi() % len(zones)
+
+
+func start():
+	started = true
+
+
+func stop():
+	started = false
