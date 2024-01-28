@@ -8,7 +8,7 @@ signal Success()
 
 const NUMBER_OF_ITEMS := 4
 
-var verbo := "vistete"
+var verbo := "dress up"
 var chosen_frame = null
 var zone_index = null
 var zones_picked: Array[int] = []
@@ -88,3 +88,7 @@ func get_random_zone_index():
 
 func start():
 	started = true
+
+
+func stop():
+	started = false

@@ -2,6 +2,8 @@ extends Sprite2D
 
 class_name MinigameTimer
 
+const SHORT_TIME := 2
+
 @export var duration: int = 5
 
 @onready var progress_bar: TextureProgressBar = $tiempo
@@ -31,3 +33,12 @@ func reset():
 
 func unpause():
 	timer.paused = false
+
+
+func shorten():
+	var short_duration
+	if timer.time_left < SHORT_TIME:
+		short_duration = timer.time_left
+	else:
+		short_duration = SHORT_TIME
+	timer.start(short_duration)

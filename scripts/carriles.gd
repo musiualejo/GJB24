@@ -4,7 +4,7 @@ signal Puntaje(int)
 signal FalloMinijuego()
 signal Success()
 
-var verbo := "esquiva"
+var verbo := "dodge"
 
 @export var items_to_spawn: Array[PackedScene]
 @export var score_per_second := 10
@@ -50,6 +50,7 @@ func _spawn_item():
 	var random_spawn_point = first_spawn_point if randi() % 2 == 0 else second_spawn_point
 	random_item.set_script(movement_script)
 	add_child(random_item)
+	random_item.add_to_group("hazards")
 	random_item.scale = Vector2(3, 3)
 	random_item.global_position = random_spawn_point.global_position
 	random_item.get_node("Area2D").connect("area_entered", _on_collision)
@@ -75,3 +76,7 @@ func start():
 	spawn_timer.one_shot = false
 	score_timer.start(1)
 	score_timer.one_shot = false
+
+
+func stop():
+	started = false

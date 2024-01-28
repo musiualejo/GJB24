@@ -7,7 +7,7 @@ signal FalloMinijuego()
 signal FinMinijuego()
 signal Success()
 
-var verbo := "corre y pilla el bus"
+var verbo := "catch the bus"
 
 var lastKey = 0
 var growthRate = 0.08
@@ -35,3 +35,7 @@ func _process(delta):
 
 func start():
 	started = true
+
+
+func stop():
+	started = false
