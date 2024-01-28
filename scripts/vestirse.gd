@@ -16,6 +16,13 @@ var zones_picked: Array[int] = []
 	$personaje/torso,
 	$personaje/piernas,
 	$personaje/pies,
+	$personaje/cabeza
+]
+@onready var success_textures = [
+	preload("res://sprites/personaje/torso.png"),
+	preload("res://sprites/personaje/piernas.png"),
+	preload("res://sprites/personaje/pies.png"),
+	preload("res://sprites/personaje/head.png")
 ]
 @onready var flecha: Sprite2D = $flecha
 @onready var items: Array[Sprite2D] = [
@@ -51,6 +58,7 @@ func _process(delta):
 
 func pick_item(item_index: int):
 	if items[item_index].frame == zone_index:
+		zones[zone_index].set_texture(success_textures[zone_index])
 		zones_picked.append(zone_index)
 		pick_zone()
 		Puntaje.emit(puntaje)
@@ -62,11 +70,13 @@ func pick_zone():
 	if len(zones_picked) == len(zones):
 		Success.emit()
 		return
+	for i in zones:
+		i.modulate = Color(1, 1, 1)
 	zone_index = get_random_zone_index()
 	while zone_index in zones_picked:
 		zone_index = get_random_zone_index()
 	var half_extent = zones[zone_index].get_rect().size.y / 2
-	flecha.global_position = zones[zone_index].global_position + Vector2(0, half_extent) - Vector2(50, 0)
+	zones[zone_index].modulate = Color(1, 0.91, 0.2)
 	items[0].frame = get_random_item_index(zone_index)
 	items[1].frame = get_random_item_index(zone_index)
 	items[2].frame = get_random_item_index(zone_index)

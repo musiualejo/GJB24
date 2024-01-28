@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dv8ucucgfflg7"]
 
-[ext_resource type="Texture2D" uid="uid://nmy68dfrqnge" path="res://sprites/personaje/head.png" id="1_y7rc7"]
-[ext_resource type="Texture2D" uid="uid://cnu8blvrtfdtl" path="res://sprites/personaje/torso.png" id="2_ayxco"]
+[ext_resource type="Texture2D" uid="uid://txorfy8r7fr3" path="res://sprites/personaje/head_sleepy.png" id="1_gpvlo"]
+[ext_resource type="Texture2D" uid="uid://debksh4nyw40o" path="res://sprites/personaje/torso_sleepy.png" id="2_8iy1l"]
 [ext_resource type="Texture2D" uid="uid://bcrqa31s4kpno" path="res://sprites/personaje/brazoizq.png" id="3_4qs82"]
 [ext_resource type="Texture2D" uid="uid://bpfxxkfjpb4n1" path="res://sprites/personaje/brazoder.png" id="4_tkntd"]
-[ext_resource type="Texture2D" uid="uid://bd5elpqrk7ggk" path="res://sprites/personaje/piernas.png" id="5_exdnr"]
-[ext_resource type="Texture2D" uid="uid://1r5f2kbfy058" path="res://sprites/personaje/pies.png" id="6_a7tyu"]
+[ext_resource type="Texture2D" uid="uid://ctjl8srg8i3rt" path="res://sprites/personaje/piernas_sleepy.png" id="5_224ie"]
+[ext_resource type="Texture2D" uid="uid://do3fyplt1e14k" path="res://sprites/personaje/pies_sleepy.png" id="6_7fb8b"]
 
 [node name="personaje" type="Node2D"]
 z_index = 1
@@ -14,13 +14,13 @@ z_as_relative = false
 [node name="cabeza" type="Sprite2D" parent="."]
 z_index = 4
 position = Vector2(32, 0)
-texture = ExtResource("1_y7rc7")
+texture = ExtResource("1_gpvlo")
 centered = false
 
 [node name="torso" type="Sprite2D" parent="."]
 z_index = 3
 position = Vector2(16, 32)
-texture = ExtResource("2_ayxco")
+texture = ExtResource("2_8iy1l")
 centered = false
 
 [node name="brazoizq" type="Sprite2D" parent="."]
@@ -38,10 +38,10 @@ centered = false
 [node name="piernas" type="Sprite2D" parent="."]
 z_index = 1
 position = Vector2(16, 76)
-texture = ExtResource("5_exdnr")
+texture = ExtResource("5_224ie")
 centered = false
 
 [node name="pies" type="Sprite2D" parent="."]
 position = Vector2(14, 124)
-texture = ExtResource("6_a7tyu")
+texture = ExtResource("6_7fb8b")
 centered = false
