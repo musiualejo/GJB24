@@ -1,0 +1,74 @@
+[gd_scene load_steps=4 format=3 uid="uid://2rdj3f70k7ny"]
+
+[ext_resource type="Script" path="res://scripts/start_day_screen.gd" id="1_fnsr6"]
+[ext_resource type="Texture2D" uid="uid://gsee7yp0f1p5" path="res://sprites/ui/calendar.png" id="2_owjrf"]
+[ext_resource type="FontFile" uid="uid://cushshrwx547c" path="res://fonts/karmaFuture.ttf" id="3_3jl82"]
+
+[node name="start_day_screen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1278.0
+offset_bottom = 716.0
+script = ExtResource("1_fnsr6")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.05176e-05
+offset_bottom = -6.10352e-05
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="timer_to_advance" type="Timer" parent="."]
+
+[node name="day_counter" type="TextureRect" parent="."]
+visible = false
+z_index = 6
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -203.0
+offset_right = 279.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_owjrf")
+
+[node name="label" type="RichTextLabel" parent="day_counter"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -238.5
+offset_top = -102.0
+offset_right = 269.5
+offset_bottom = 95.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_3jl82")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][font_size=120][color=black]Day 1[/color][/font_size][/center]"
+
+[node name="fondo" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="fondo2" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="timeout" from="timer_to_advance" to="." method="_on_timer_to_advance_timeout"]

@@ -1,7 +1,7 @@
 extends Control
 
 
-@onready var main_scene: Node2D = preload("res://scenes/main.tscn").instantiate()
+@onready var start_day_screen: Control = preload("res://scenes/start_day_screen.tscn").instantiate()
 @onready var button: Button = $Label/Button
 @onready var button_background: ColorRect = $Label/Button/ColorRect
 
@@ -15,7 +15,7 @@ func _ready():
 
 
 func _go_to_main():
-	get_tree().root.add_child(main_scene)
+	get_tree().root.add_child(start_day_screen)
 	queue_free()
 
 
