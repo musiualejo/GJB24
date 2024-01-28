@@ -5,6 +5,7 @@ signal FalloMinijuego()
 signal Success()
 
 var verbo := "dodge"
+var is_survival := true
 
 var item = load("res://scenes/objetos/object.tscn")
 @export var score_per_second := 10

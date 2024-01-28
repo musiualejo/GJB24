@@ -25,9 +25,10 @@ func _process(delta):
 		progress_bar.tint_progress = Color(1.0, 0.0, 0.0)
 
 
-func reset():
+func reset(time: int):
+	progress_bar.max_value = time
 	progress_bar.tint_progress = Color(0.0, 1.0, 0.0)
-	timer.start(duration)
+	timer.start(time)
 	timer.paused = true
 
 

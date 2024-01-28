@@ -8,6 +8,7 @@ signal FinMinijuego()
 signal Success()
 
 var verbo := "catch the bus"
+var is_survival = false
 
 var lastKey = 0
 var growthRate = 0.08

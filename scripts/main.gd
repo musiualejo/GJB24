@@ -67,6 +67,8 @@ func _next_minigame():
 	current_minigame_index = (current_minigame_index + 1) % len(minigames)
 	if current_minigame_index == 0: # We've looped
 		Globals.current_day += 1
+		Globals.timer_action -= 1
+		Globals.timer_survive += 1
 		get_tree().root.add_child(start_day_scene)
 		queue_free()
 		return
@@ -91,7 +93,12 @@ func _setup_minigame():
 	failure_message = ui_node.get_node("failure_message")
 	failure_message.hide()
 	nTimer = ui_node.get_node("cronometro/reloj")
-	nTimer.reset()
+	var timer_duration
+	if nMinijuego.is_survival:
+		timer_duration = Globals.timer_survive
+	else:
+		timer_duration = Globals.timer_action
+	nTimer.reset(timer_duration)
 
 
 func _on_timer_timeout():

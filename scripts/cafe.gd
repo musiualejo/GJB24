@@ -1,6 +1,7 @@
 extends Node2D
 
 var verbo := "keep them productive"
+var is_survival := true
 var started := false
 
 var tempo = 1

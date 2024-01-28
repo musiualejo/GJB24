@@ -9,6 +9,7 @@ signal Success()
 const NUMBER_OF_ITEMS := 4
 
 var verbo := "dress up"
+var is_survival = false
 var chosen_frame = null
 var zone_index = null
 var zones_picked: Array[int] = []
