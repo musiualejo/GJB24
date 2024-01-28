@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://ccmrqy150f4jb"]
+
+[ext_resource type="Texture2D" uid="uid://cfcmceojc812e" path="res://sprites/fondos/bg_menu.png" id="1_bfwtc"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_w31md"]
+[ext_resource type="Texture2D" uid="uid://bd65p57dsxypo" path="res://sprites/ui/CRAZY.png" id="2_ao4yf"]
+[ext_resource type="Texture2D" uid="uid://b6nanmvbswvvh" path="res://sprites/ui/ROUTINE.png" id="3_8jq8d"]
+[ext_resource type="Texture2D" uid="uid://cw70immk3wufu" path="res://sprites/ui/START.png" id="4_3x3th"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w31md")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_bfwtc")
+
+[node name="Label" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 0.55
+anchor_bottom = 0.624
+offset_left = 462.0
+offset_top = 62.0
+offset_right = 462.0
+offset_bottom = 61.72
+
+[node name="TextureRect" type="TextureRect" parent="Label"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -4.0
+offset_right = 275.0
+offset_bottom = 119.0
+texture = ExtResource("2_ao4yf")
+
+[node name="TextureRect2" type="TextureRect" parent="Label"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 94.0
+offset_right = 336.0
+offset_bottom = 232.0
+texture = ExtResource("3_8jq8d")
+
+[node name="Button" type="Button" parent="Label"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.433
+anchor_bottom = 0.287
+offset_left = 42.0
+offset_top = 400.0
+offset_right = 90.168
+offset_bottom = 379.137
+rotation = -0.198104
+
+[node name="ColorRect" type="ColorRect" parent="Label/Button"]
+layout_mode = 0
+offset_right = 352.0
+offset_bottom = 107.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect3" type="TextureRect" parent="Label/Button"]
+layout_mode = 0
+offset_left = 76.5033
+offset_top = -25.441
+offset_right = 313.503
+offset_bottom = 92.559
+rotation = 0.198968
+texture = ExtResource("4_3x3th")

@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/carriles.gd" id="1_6jwjv"]
 [ext_resource type="Texture2D" uid="uid://dt3fcwww1op1n" path="res://sprites/fondos/fondocalle.png" id="2_8nyug"]
-[ext_resource type="PackedScene" path="res://scenes/objetos/camisa.tscn" id="2_msb5k"]
-[ext_resource type="PackedScene" path="res://scenes/objetos/pantalones.tscn" id="3_oav5t"]
-[ext_resource type="PackedScene" path="res://scenes/objetos/reloj.tscn" id="4_svfax"]
-[ext_resource type="PackedScene" path="res://scenes/objetos/zapatos.tscn" id="5_ut7an"]
+[ext_resource type="PackedScene" uid="uid://m8r2bbb17tso" path="res://scenes/objetos/camisa.tscn" id="2_msb5k"]
+[ext_resource type="PackedScene" uid="uid://epwm4lks5efu" path="res://scenes/objetos/pantalones.tscn" id="3_oav5t"]
+[ext_resource type="PackedScene" uid="uid://chhx10o83m1v0" path="res://scenes/objetos/reloj.tscn" id="4_svfax"]
+[ext_resource type="PackedScene" uid="uid://cx423nn0jbet5" path="res://scenes/objetos/zapatos.tscn" id="5_ut7an"]
 [ext_resource type="Texture2D" uid="uid://cbqse17brb3jy" path="res://sprites/personaje/road_characters.png" id="7_6o68s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02l2u"]
