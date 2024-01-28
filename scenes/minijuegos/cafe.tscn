@@ -1,0 +1,92 @@
+[gd_scene load_steps=7 format=3 uid="uid://dl1xvmbiityid"]
+
+[ext_resource type="Script" path="res://scripts/cafe.gd" id="1_78v5d"]
+[ext_resource type="Texture2D" uid="uid://uxg1pptf2fv3" path="res://sprites/personaje/coffee_characters.png" id="2_scn8g"]
+[ext_resource type="Texture2D" uid="uid://cm3dcxjkmiprs" path="res://sprites/personaje/office_coworker.png" id="3_k34n1"]
+[ext_resource type="Script" path="res://scripts/coworkers.gd" id="4_6t2yn"]
+[ext_resource type="Texture2D" uid="uid://cblewsrb8rc6e" path="res://sprites/fondos/fondo.png" id="4_m28pu"]
+[ext_resource type="Texture2D" uid="uid://d1svvggd1w65s" path="res://sprites/ui/coffee_progress.png" id="4_nga0y"]
+
+[node name="minijuego" type="Node2D"]
+script = ExtResource("1_78v5d")
+
+[node name="personaje" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(624, 344)
+scale = Vector2(3, 3)
+texture = ExtResource("2_scn8g")
+hframes = 3
+vframes = 2
+frame = 2
+
+[node name="coworkers" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(640, 360)
+
+[node name="1" type="Sprite2D" parent="coworkers"]
+position = Vector2(0, 160)
+scale = Vector2(3, 3)
+texture = ExtResource("3_k34n1")
+hframes = 2
+vframes = 2
+script = ExtResource("4_6t2yn")
+
+[node name="stamina" type="TextureProgressBar" parent="coworkers/1"]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_progress = ExtResource("4_nga0y")
+texture_progress_offset = Vector2(-32, -32)
+tint_progress = Color(0.290196, 1, 0.109804, 1)
+
+[node name="2" type="Sprite2D" parent="coworkers"]
+position = Vector2(288, -16)
+scale = Vector2(3, 3)
+texture = ExtResource("3_k34n1")
+hframes = 2
+vframes = 2
+script = ExtResource("4_6t2yn")
+
+[node name="stamina" type="TextureProgressBar" parent="coworkers/2"]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_progress = ExtResource("4_nga0y")
+texture_progress_offset = Vector2(-32, -32)
+tint_progress = Color(0.290196, 1, 0.109804, 1)
+
+[node name="3" type="Sprite2D" parent="coworkers"]
+position = Vector2(-288, -16)
+scale = Vector2(3, 3)
+texture = ExtResource("3_k34n1")
+hframes = 2
+vframes = 2
+script = ExtResource("4_6t2yn")
+
+[node name="stamina" type="TextureProgressBar" parent="coworkers/3"]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_progress = ExtResource("4_nga0y")
+texture_progress_offset = Vector2(-32, -32)
+tint_progress = Color(0.290196, 1, 0.109804, 1)
+
+[node name="4" type="Sprite2D" parent="coworkers"]
+position = Vector2(0, -192)
+scale = Vector2(3, 3)
+texture = ExtResource("3_k34n1")
+hframes = 2
+vframes = 2
+script = ExtResource("4_6t2yn")
+
+[node name="stamina" type="TextureProgressBar" parent="coworkers/4"]
+offset_right = 40.0
+offset_bottom = 40.0
+value = 100.0
+texture_progress = ExtResource("4_nga0y")
+texture_progress_offset = Vector2(-32, -32)
+tint_progress = Color(0.290196, 1, 0.109804, 1)
+
+[node name="fondo" type="Sprite2D" parent="."]
+texture = ExtResource("4_m28pu")
+centered = false
